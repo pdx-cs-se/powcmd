@@ -19,10 +19,10 @@ uint64_t pow(uint64_t x, uint64_t y) {
     // result * x**(y-i) == x**y && i <= y
     for (uint64_t i = 0; i < y; i++) {
         // result * x**(y-i) == x**y && i <= y
-        uint64_t new_result = result * x;
-        if (new_result < result)
+        uint64_t old_result = result;
+        result *= x;
+        if (result / x != old_result)
             throw std::overflow_error("pow is too large");
-        result = new_result;
         // result * x**(y-i-1) == x**y && i <= y
     }
     // result == x**y && i == y */
