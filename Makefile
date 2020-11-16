@@ -1,3 +1,6 @@
+# Makefile for powcmd
+# Bart Massey
+
 CXX = g++
 CXXFLAGS = -Wall -Werror -g
 
